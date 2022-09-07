@@ -2,6 +2,7 @@ import '../styles/style.scss';
 import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
 import MainLayout from '../layouts/main';
+import { wrapper } from '../store';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,4 +12,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default appWithTranslation(MyApp);
+export default wrapper.withRedux(appWithTranslation(MyApp));
