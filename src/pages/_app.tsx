@@ -3,12 +3,19 @@ import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
 import MainLayout from '../layouts/main';
 import { wrapper } from '../store';
+import { useRouter } from 'next/router';
+import { isRTL } from '@app/utils/translations';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const RTL = isRTL(router.locale as string);
   return (
-    <MainLayout>
-      <Component {...pageProps} />
-    </MainLayout>
+    <div dir={RTL ? 'rtl' : 'ltr'}>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
+    </div>
+    
   );
 }
 

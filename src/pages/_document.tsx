@@ -1,11 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { isRTL } from '@app/utils/translations';
 
 class MyDocument extends Document {
   render() {
-    const RTL = isRTL(this.props.locale as string);
     return (
-      <Html dir={RTL ? 'rtl' : 'ltr'}>
+      <Html>
         <Head />
         <body>
           <Main />
