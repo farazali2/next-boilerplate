@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       <h1>{t('home:title')}</h1>
       <p>{t('home:description')}</p>
       <h5>Dark: {dark ? 'Yes' : 'No'}</h5>
-      <button onClick={() => dispatch(setDark(!dark))}>Change State</button>
+      <button onClick={() => dispatch(setDark(!dark))} className='btn btn-primary'>Change State</button>
     </>
   );
 };
