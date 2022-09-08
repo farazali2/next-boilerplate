@@ -43,7 +43,7 @@ const Home: NextPage = () => {
           </div>
           <div className="col-12">
             <div className='d-flex align-items-center my-4 justify-content-end'>
-              <h5 className='m-0 me-3'>Dark: {dark ? 'Yes' : 'No'}</h5>
+              <h5 className='m-0 mx-3'>Dark: {dark ? 'Yes' : 'No'}</h5>
               <button onClick={() => dispatch(setDark(!dark))} className='btn btn-primary'>Change State</button>
             </div>
           </div>
