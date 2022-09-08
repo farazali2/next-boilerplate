@@ -2,9 +2,11 @@ import type { NextPage, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Metadata from '../layouts/head';
-import { useSelector, useDispatch } from 'react-redux';
-import { AppState } from '../store/types';
-import { setDark } from '../store/slices/app.slice';
+import { AppState } from '@app/store/types';
+import { setDark } from '@app/store/slices/app.slice';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '@app/store';
+import { getUniversities } from '@app/store/actions/universities.actions';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -14,8 +16,14 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 
 const Home: NextPage = () => {
   const { t } = useTranslation(['common', 'home']);
-  const dark = useSelector((state: AppState) => state.app.dark);
-  const dispatch = useDispatch();
+  
+  const dispatch = useAppDispatch();
+  const dark = useAppSelector((state: AppState) => state.app.dark);
+
+  useEffect(() => {
+    dispatch(getUniversities());
+  }, [])
+
   return (
     <>
       <Metadata

@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { isRTL } from '../utils/translation.helpers';
+import { isRTL } from '@app/utils/translations';
 
 class MyDocument extends Document {
   render() {
