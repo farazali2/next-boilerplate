@@ -9,6 +9,6 @@ export const getUniversities = createAsyncThunk(
     //Making an api call
     const response = await fetchUniversities();
     //Return response json
-    return response.data.json();
+    return response.data;
   }
 );

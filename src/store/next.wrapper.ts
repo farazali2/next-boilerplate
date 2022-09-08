@@ -13,4 +13,4 @@ const makeStore = (context: Context): AppStore => store;
 /**
  * Creating redux wrapper for the next JS
  */
- export const wrapper = createWrapper<AppStore>(makeStore, {debug: config.app.environment !== 'production'});
+ export const wrapper = createWrapper<AppStore>(makeStore, {debug: false});

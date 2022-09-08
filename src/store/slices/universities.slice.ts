@@ -45,23 +45,27 @@ export const UniversitiesSlice = createSlice({
      * Adding reducer to reducer builder 
      * for get universites
      */
+     builder.addCase(getUniversities.pending, (state, action) => {
+      //Setting loading state to true
+      state.loading = true;
+      //Clearing list
+      state.list = [];
+     });
+
+    /**
+     * Adding reducer to reducer builder 
+     * for get universites
+     */
     builder.addCase(getUniversities.fulfilled, (state, action) => {
       //Setting loading state to false
       state.loading = false;
       //Adding universities to the list
-      state.list.push(action.payload);
+      state.list = action.payload;
     });
 
   }
 
 });
-
-/**
- * Exporting getter
- * @param state 
- * @returns UniversitiesState.list
- */
-export const getList = (state: UniversitiesState) => state.list;
 
 /**
  * Exporting actions

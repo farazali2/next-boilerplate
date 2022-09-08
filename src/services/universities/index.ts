@@ -7,6 +7,6 @@ import fetcher, { Response } from '@app/utils/fetcher';
  */
 export const fetchUniversities = async (): Promise<Response> => {
   return fetcher.get(
-    'http://universities.hipolabs.com/search?country=United+States'
+    'http://universities.hipolabs.com/search?country=pakistan'
   );
 };
