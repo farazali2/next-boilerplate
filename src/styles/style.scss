@@ -1,16 +1,16 @@
-//Globals
+// Globals Variables,
 @import "./global";
-
-//Vendors
-@import "./vendors/bootstrap";
-
-//Base
+// Fonts Family
 @import "./base/fonts";
-@import "./base/reset";
+// Typography Heading and Paragraph
 @import "./base/typography";
-
-//Components
+// Reset HTML and Body
+@import "./base/reset";
+// Vendors
+@import "./vendors/bootstrap";
+// Container
+@import "./layouts/container";
+// Button Components
 @import "./components/button";
-
 //Pages
 @import "./pages/home";

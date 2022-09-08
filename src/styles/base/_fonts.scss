@@ -1,0 +1,13 @@
+
+@each $font in $supportedFonts {
+  $folder: nth($font, 1);
+  $file: nth($font, 2);
+  $name: nth($font, 3);
+  $weight: nth($font, 4);
+  @font-face {
+    font-family: $name;
+    src: url('#{$fontsPath}#{$folder}/#{$file}.otf');
+    src : font-src($folder , $file);
+    font-weight: $weight;
+  }
+}

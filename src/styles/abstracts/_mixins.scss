@@ -1,0 +1,123 @@
+// fonts
+@mixin fontFamily($lang : 'en', $weight : inherit) {
+  @if ($lang =='en') {
+    font-family: $fontFamilyBase;
+    font-weight: $weight;
+  } @else {
+    font-family: $fontFamilyBaseAr;
+    font-weight: $weight;
+  }
+}
+
+// Transitions Mixin
+//use: @include transitions(all 0.5s ease-in-out 0s);
+//output: transition: all 0.5s ease-in-out 0s;
+@mixin transitions($property: all, $duration: 0.5s, $timingFunction: ease-in, $delay: 0s) {
+  -webkit-transition: $property $duration $timingFunction $delay;
+  -moz-transition: $property $duration $timingFunction $delay;
+  -o-transition: $property $duration $timingFunction $delay;
+  transition: $property $duration $timingFunction $delay;
+}
+
+// Only isRTL true
+//use: @include rtl{}
+@mixin rtl {
+  html[lang="ar"] & {
+    @content;
+  }
+}
+
+// Background Image
+//use: @include image-src('image', '.ext');
+@mixin image-src($path, $ext) {
+  [lang=en] & {
+    background-image: url(#{$imagesPath+$path}.#{$ext});
+  }
+  [lang=ar] & {
+    background-image: url(#{$imagesPath+$path}-rtl.#{$ext});
+  }
+}
+
+// Border Radius
+//use: @include borderRadius(0px);
+@mixin borderRadius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Transform Scale
+//use: @include transform(scale(1), rotate(0deg), translate(0px, 0px));
+//output: transform: scale(1) rotate(0deg) translate(0px, 0px);
+@mixin transform($transforms...) {
+  // combine the passed transforms into a space separated list
+  $transform-list: join($transforms, null, space);
+  // print out the transforms
+  -webkit-transform: $transform-list;
+  -moz-transform: $transform-list;
+  -ms-transform: $transform-list;
+  -o-transform: $transform-list;
+  transform: $transform-list;
+}
+
+//use: @include mprl(margin,left,right,30px);
+//use: @include mprl(margin,right,left,30px);
+//output: margin-left: 30px;
+//output: margin-right: 30px;
+@mixin mprl($property,$positionL, $positionR, $value) {
+  [dir=ltr] & {
+    #{$property}-#{$positionL}: $value;
+  }
+  [dir=rtl] & {
+    #{$property}-#{$positionR}: $value;
+  }
+}
+
+//use: @include leftToRight(30px);
+//output: left: 30px;
+@mixin leftToRight($value) {
+  [dir=ltr] & {
+    left: $value;
+  }
+  [dir=rtl] & {
+    right: $value;
+  }
+}
+
+//use: @include RightToLeft(30px);
+//output: right: 30px;
+@mixin RightToLeft($value) {
+  [dir=ltr] & {
+    right: $value;
+  }
+  [dir=rtl] & {
+    left: $value;
+  }
+}
+
+//use: @include ForMarginPadding(padding,0,10px,0,20px);
+// use: @include ForMarginPadding(margin,0,10px,0,20px);
+//output: padding: 0,10px,0,20px;
+//output: margin: 0,10px,0,20px;
+@mixin ForMarginPadding($property, $top, $right, $bottom, $left) {
+  [dir=ltr] & {
+    #{$property}: $top $right $bottom $left;
+  }
+  [dir=rtl] & {
+    #{$property}: $top $left $bottom $right;
+  }
+}
+
+//for text-align: left or right;
+//use: @include ForDirection(text-align, left, right);
+//output: text-align:left; in EN, text-align:right;
+@mixin ForDirection($property, $ltr-value, $rtl-value) {
+  [dir=ltr] & {
+    #{$property}: $ltr-value;
+  }
+  [dir=rtl] & {
+    #{$property}: $rtl-value;
+  }
+}

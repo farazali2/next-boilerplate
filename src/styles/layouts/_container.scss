@@ -1,0 +1,60 @@
+
+// Laptops large devices (desktops, 1600px and up)
+@media (min-width: 1921.99px) {
+  .container {
+    max-width: rem(1460);
+  }
+}
+
+@media (max-width: 1920.99px) {
+  .container {
+    max-width: 74.4795%;
+  }
+}
+
+// Laptops large devices (desktops, 1600px and up)
+@media (min-width: 1700px) and (max-width: 1919.98px) {}
+
+// Laptops large devices (desktops, 1600px and up)
+@media (min-width: 1600px) and (max-width: 1699.98px) {}
+
+// Laptops large devices (desktops, 1400px and up)
+@media (min-width: 1400px) and (max-width: 1599.98px) {}
+
+// Laptops small devices (desktops, 1200px and up)
+@media (min-width: 1281px) and (max-width: 1399.98px) {}
+
+// Laptops small devices (desktops, 1200px and up)
+@media (min-width: 1200px) and (max-width: 1280.98px) {}
+
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    max-width: 91.7%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    max-width: 94%;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 94%;
+  }
+}

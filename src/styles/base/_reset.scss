@@ -1,0 +1,6 @@
+html {
+  font-size: rem(16);
+}
+body{
+  @include fontFamily();
+}

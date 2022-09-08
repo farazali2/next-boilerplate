@@ -1,0 +1,71 @@
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $baseUrl: '/public/';
+$baseUrl: '/';
+$fontsPath: "/fonts/";
+$imagesPath: "/images/";
+
+/// Fonts To be Imported
+$supportedFontsExts: (
+                ('woff2', format('woff2')),
+                ('woff', format('woff')),
+                ('otf', format('truetype'))
+);
+$supportedFonts: (gimler, Gilmer-Heavy, "Gimler", 900), (gimler, Gimler-Bold, "Gimler", 700);
+
+$fontFamilyBase: 'Gilmer', Arial, sans-serif;
+$fontFamilyBaseAr: 'Gilmer', Arial, sans-serif;
+$font-family-base: $fontFamilyBase, sans-serif;
+$headings-font-family: $fontFamilyBase, sans-serif;
+
+
+/// Bootstrap overrides
+///
+/// Copy variables from `_variables.scss` to this file to override default values
+/// without modifying source files.
+
+/// Start Of Website Color Branding
+
+$primary: #13A19A;
+$secondary: #C82B64;
+$white: #ffffff;
+$black: #000000;
+$lightGrey: #666666;
+$borderColor: #373737;
+
+
+/// begin customization
+$body-bg: $black;
+$body-color: $white;
+$theme-colors: ();
+/// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+                (
+                        "primary": $primary,
+                        "secondary": $secondary,
+                        "borderColor": $borderColor,
+                        "lightGrey": $lightGrey,
+                        "white": $white,
+                        "black": $black,
+                ),
+                $theme-colors
+);
+
+
+$btn-border-radius: 0px;
+$btn-padding-y: 0;
+$btn-padding-x: 0;
+$btn-border-width: 1px;
+$btn-box-shadow: none;
+
+$grid-gutter-width: 1.875rem;
+
+
+::-moz-selection {
+  background: rgba($primary, 0.23);
+}
+
+::selection {
+  background: rgba($primary, 0.23);
+}
