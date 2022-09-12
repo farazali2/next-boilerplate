@@ -33,6 +33,7 @@ You need to make sure that you have the following versions to run the project.
 * Node : v16.16.0 
 
 ---
+
 The following steps explaining how to download and start development processes. 
 
 ## Download
@@ -60,4 +61,67 @@ $ yarn build
 
 # Run server on production
 $ yarn start
+```
+
+---
+
+## Application Structure
+
+The following is the structure for the app we will define each of the module independently
+
+```bash
++-- public
+|   +-- fonts
+|   +-- images
+|   +-- locales
+|       +-- ar
+|       +-- en
+|   --- favicon.ico
++-- src
+|   +-- components
+|   +-- config
+|   +-- layouts
+|   +-- pages
+|   +-- services
+|   +-- store
+|   +-- styles
+|   +-- types
+|   +-- utils
+|
+|-- next-i18next.config.json
+|-- next.config.json
+|-- tsconfig.json
+|-- package.json
+```
+
+## Sass/Scss Structure
+
+The following is the structure for the application styles
+
+```bash
++-- styles
+|   +-- abstracts
+|       --- _functions.scss
+|       --- _mixins.scss
+|       --- _variables.scss
+|   +-- base
+|       --- _fonts.scss
+|       --- _reset.scss
+|       --- _typography.scss
+|   +-- components
+|       --- _button.scss
+|       --- _checkbox.scss
+|   +-- layouts
+|       --- _container.scss
+|       --- _footer.scss
+|       --- _header.scss
+|   +-- pages
+|       --- _home.scss
+|       --- _about.scss
+|   +-- vendors
+|       --- _bootstrap.scss
+|       --- _slick-slider.scss
+|   --- _global.scss
+|   --- style.scss
++
 ```
