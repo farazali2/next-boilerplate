@@ -1,3 +1,4 @@
+import 'animate.css';
 import '../styles/style.scss';
 import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
@@ -15,7 +16,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </MainLayout>
     </div>
-    
   );
 }
 

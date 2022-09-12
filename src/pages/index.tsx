@@ -7,6 +7,7 @@ import { setDark } from '@app/store/slices/app.slice';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@app/store';
 import { getUniversities } from '@app/store/actions/universities.actions';
+import Animate from '@app/components/animations/animate';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -28,8 +29,6 @@ const Home: NextPage = () => {
   useEffect(() => {
     dispatch(getUniversities());
   }, []);
-
-  console.log(universites);
 
   return (
     <>
@@ -65,23 +64,36 @@ const Home: NextPage = () => {
                 <p className='my-3'>Loading universities please awit</p>
               </div>
             ) : null}
-            {universites.map((item, i) => (
-              <div key={i + 1} className='card mt-2 p-4'>
-                <h5 className='m-0 p-0 mb-1 text-primary'>{item.name}</h5>
-                <p className='m-0 p-0 text-muted'>
-                  {item.country + ', ' + item['state-province']}
-                </p>
-                <div>
-                  {item.web_pages.map((domain, j) => (
-                    <a href={domain} key={j}>
-                      {domain}
-                    </a>
-                  ))}
+            {universites.slice(0, 5).map((item, i) => (
+              <Animate type='fadeInUp' delay={300 * (i + 1)} key={i + 1}>
+                <div className='card mt-2 p-4'>
+                  <h5 className='m-0 p-0 mb-1 text-primary'>{item.name}</h5>
+                  <p className='m-0 p-0 text-muted'>
+                    {item.country + ', ' + item['state-province']}
+                  </p>
+                  <div>
+                    {item.web_pages.map((domain, j) => (
+                      <a href={domain} key={j}>
+                        {domain}
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </Animate>
             ))}
           </div>
         </div>
+        <Animate type='textLineAnimate' delay={700}>
+          <div className='my-5'>
+            <h2>About</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus exercitationem officia tempore ipsum odio aspernatur!
+              Autem nesciunt a animi reiciendis iusto, beatae culpa id quos
+              totam perspiciatis, deserunt, amet ipsum.
+            </p>
+          </div>
+        </Animate>
       </div>
     </>
   );
