@@ -8,18 +8,10 @@
 @import "./base/reset";
 // Vendors
 @import "./vendors/bootstrap";
+@import "./vendors/animate";
 // Container
 @import "./layouts/container";
 // Button Components
 @import "./components/button";
 //Pages
 @import "./pages/home";
-
-.animate{
-  filter: alpha(opacity=0);
-  opacity: 0;
-  &__animated{
-    filter: alpha(opacity=100);
-    opacity: 1;
-  }
-}

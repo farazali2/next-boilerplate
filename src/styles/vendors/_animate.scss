@@ -1,0 +1,10 @@
+@media (min-width: 1200px) {
+  .animate{
+    filter: alpha(opacity=0);
+    opacity: 0;
+    &__animated{
+      filter: alpha(opacity=100);
+      opacity: 1;
+    }
+  }
+}

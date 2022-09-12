@@ -55,6 +55,24 @@ const Home: NextPage = () => {
             </div>
           </div>
 
+          <div className='col-12 mb-5'>
+            <Animate type='fadeInUp' delay={500}>
+              <h2>About</h2>
+            </Animate>
+            <Animate type='fadeInUp' delay={700}>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatibus exercitationem officia tempore ipsum odio
+                aspernatur! aspernatur! aspernatur! aspernatur!.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatibus exercitationem officia tempore ipsum odio
+                aspernatur! aspernatur! aspernatur! aspernatur!.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatibus exercitationem officia tempore ipsum odio
+                aspernatur! aspernatur! aspernatur! aspernatur!.
+              </p>
+            </Animate>
+          </div>
           <div className='col-6 mx-auto'>
             {loading ? (
               <div className='card mt-2 p-4 text-primary text-center'>
@@ -83,17 +101,6 @@ const Home: NextPage = () => {
             ))}
           </div>
         </div>
-        <Animate type='textLineAnimate' delay={700}>
-          <div className='my-5'>
-            <h2>About</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatibus exercitationem officia tempore ipsum odio aspernatur!
-              Autem nesciunt a animi reiciendis iusto, beatae culpa id quos
-              totam perspiciatis, deserunt, amet ipsum.
-            </p>
-          </div>
-        </Animate>
       </div>
     </>
   );
