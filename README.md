@@ -87,7 +87,6 @@ The following is the structure for the app we will define each of the module ind
 |   +-- styles
 |   +-- types
 |   +-- utils
-|
 |-- next-i18next.config.json
 |-- next.config.json
 |-- tsconfig.json
