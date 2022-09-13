@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import slices from '@app/store/slices';
+import masterReducer from '@app/store/slices/master.reducer';
 
 /**
  * create the app store
  * with the configurations
  */
 export const store = configureStore({
-  reducer: slices,
+  reducer: masterReducer,
   devTools: true,
 });

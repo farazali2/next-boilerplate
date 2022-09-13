@@ -7,16 +7,16 @@ import { wrapper } from '../store';
 import { useRouter } from 'next/router';
 import { isRTL } from '@app/utils/translations';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
   const RTL = isRTL(router.locale as string);
   return (
-    <div dir={RTL ? 'rtl' : 'ltr'}>
+    <div dir={RTL ? 'rtl' : 'ltr'} className={''}>
       <MainLayout>
         <Component {...pageProps} />
       </MainLayout>
     </div>
   );
-}
+};
 
 export default wrapper.withRedux(appWithTranslation(MyApp));

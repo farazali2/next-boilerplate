@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { HYDRATE } from 'next-redux-wrapper';
 
 export interface AppState {
   dark: boolean;
@@ -31,14 +30,6 @@ export const AppSlice = createSlice({
         title: action.payload.title || state.metadata.title,
         description: action.payload.title || state.metadata.title,
         keywords: action.payload.title || state.metadata.title,
-      };
-    },
-  },
-  extraReducers: {
-    [HYDRATE]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload.auth,
       };
     },
   },

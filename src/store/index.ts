@@ -2,7 +2,13 @@
 export { store } from '@app/store/store';
 
 //Exporting next wrapper for redux store
-export { wrapper } from '@app/store/next.wrapper';
+export {
+  wrapper,
+  getAppInitialAppProps,
+  getAppInitialPageProps,
+  getAppServerSideProps,
+  getAppStaticProps,
+} from '@app/store/next.wrapper';
 
 //Exporting redux store hooks for typescript
 export { useAppDispatch } from '@app/store/hooks';

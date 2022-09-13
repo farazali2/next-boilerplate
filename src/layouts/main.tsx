@@ -4,6 +4,7 @@ import { useAppSelector } from '@app/store';
 import { FC, ReactNode } from 'react';
 import { AppState } from '@app/store/types';
 import Metadata from '@app/layouts/head';
+
 interface MainLayoutProps {
   children: ReactNode;
 }
