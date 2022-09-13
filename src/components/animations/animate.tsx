@@ -1,8 +1,8 @@
 import React, { useRef, useState, Children, ReactElement } from 'react';
-import useIsInViewport from '@app/hooks/inviewport.hook';
+import useIsInViewport from '@app/hooks/useIsInViewport';
 
 interface IAnimate {
-  children: React.ReactElement;
+  children: React.ReactNode;
   type: string;
   delay: number;
 }
@@ -18,14 +18,17 @@ const Animate: React.FC<IAnimate> = ({ children, type, delay }) => {
     }, delay);
   }
 
-  const NewChildren = Children.map(children, (child: ReactElement) => {
-    return React.cloneElement(child, {
-      className: `${child.props.className} ${className}`,
-      ref: eleRef,
-    });
-  });
+  const mutated = Children.map(
+    children as ReactElement,
+    (child: ReactElement) => {
+      return React.cloneElement(child as ReactElement, {
+        className: `${child.props.className} ${className}`,
+        ref: eleRef,
+      });
+    }
+  );
 
-  return <>{NewChildren}</>;
+  return <>{mutated}</>;
 };
 
 export default Animate;

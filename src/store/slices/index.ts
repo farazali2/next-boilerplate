@@ -1,8 +1,12 @@
 //Importing slices
 import AppReducer, { AppSlice } from '@app/store/slices/app.slice';
-import UniversitiesReducer, { UniversitiesSlice } from '@app/store/slices/universities.slice';
+import UniversitiesReducer, {
+  UniversitiesSlice,
+} from '@app/store/slices/universities.slice';
 
-export default {
+const reducers = {
   [AppSlice.name]: AppReducer,
-  [UniversitiesSlice.name]: UniversitiesReducer
-}
+  [UniversitiesSlice.name]: UniversitiesReducer,
+};
+
+export default reducers;

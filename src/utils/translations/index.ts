@@ -6,4 +6,4 @@ import locales from '@app/config/locales';
  * @param key
  * @returns boolean
  */
- export const isRTL = (key: string): boolean => locales.RTLs.includes(key);
+export const isRTL = (key: string): boolean => locales.RTLs.includes(key);

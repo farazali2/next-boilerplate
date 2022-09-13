@@ -3,7 +3,7 @@ import { fetchUniversities } from '@app/services/universities';
 
 export const getUniversities = createAsyncThunk(
   //Action type
-  'universities/fetchAll', 
+  'universities/fetchAll',
   //Callback function
   async () => {
     //Making an api call

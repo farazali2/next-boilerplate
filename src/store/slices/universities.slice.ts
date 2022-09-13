@@ -15,21 +15,32 @@ const initialState: UniversitiesState = {
 };
 
 export const UniversitiesSlice = createSlice({
-  
   //Slice Name
   name: 'universities',
-  
+
   //Slice Initial State
   initialState,
-  
+
   /**
-   * Standard reducer logic with auto generated 
+   * Standard reducer logic with auto generated
    * action types per reducer
    */
   reducers: {
+    /**
+     * Reducer action to set universities list
+     * @param state
+     * @param action
+     */
     setList: (state, action) => {
       state.list = action.payload;
     },
+
+    /**
+     * Reducer action to set universities
+     * loading state
+     * @param state
+     * @param action
+     */
     setLoading: (state, action) => {
       state.loading = action.payload;
     },
@@ -37,23 +48,22 @@ export const UniversitiesSlice = createSlice({
 
   /**
    * Reducers with additional action types
-   * @param builder 
+   * @param builder
    */
   extraReducers: (builder) => {
-
     /**
-     * Adding reducer to reducer builder 
+     * Adding reducer to reducer builder
      * for get universites
      */
-     builder.addCase(getUniversities.pending, (state, action) => {
+    builder.addCase(getUniversities.pending, (state) => {
       //Setting loading state to true
       state.loading = true;
       //Clearing list
       state.list = [];
-     });
+    });
 
     /**
-     * Adding reducer to reducer builder 
+     * Adding reducer to reducer builder
      * for get universites
      */
     builder.addCase(getUniversities.fulfilled, (state, action) => {
@@ -62,14 +72,11 @@ export const UniversitiesSlice = createSlice({
       //Adding universities to the list
       state.list = action.payload;
     });
-
-  }
-
+  },
 });
 
-/**
- * Exporting actions
- */
+//Exporting slice actions
 export const { setList, setLoading } = UniversitiesSlice.actions;
 
+//Exporting reducer
 export default UniversitiesSlice.reducer;

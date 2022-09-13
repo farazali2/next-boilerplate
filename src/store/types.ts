@@ -9,7 +9,7 @@ export type AppStore = typeof store;
 /**
  * Createing app state type
  */
-export type AppState = ReturnType<AppStore["getState"]>;
+export type AppState = ReturnType<AppStore['getState']>;
 
 /**
  * Creating app dispatch type
