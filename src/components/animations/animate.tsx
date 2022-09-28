@@ -1,4 +1,10 @@
-import React, { useRef, useState, Children, ReactElement } from 'react';
+import React, {
+  useRef,
+  useState,
+  Children,
+  ReactElement,
+  useEffect,
+} from 'react';
 import useIsInViewport from '@app/hooks/useIsInViewport';
 
 interface IAnimate {
@@ -12,11 +18,13 @@ const Animate: React.FC<IAnimate> = ({ children, type, delay }) => {
   const inView = useIsInViewport(eleRef);
   const [className, setClassName] = useState('animate');
 
-  if (inView) {
-    setTimeout(() => {
-      return setClassName(`animate animate__animated animate__${type}`);
-    }, delay);
-  }
+  useEffect(() => {
+    if (inView) {
+      setTimeout(() => {
+        return setClassName(`animate animate__animated animate__${type}`);
+      }, delay);
+    }
+  }, [inView]);
 
   const mutated = Children.map(
     children as ReactElement,

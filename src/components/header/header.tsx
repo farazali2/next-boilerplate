@@ -1,24 +1,20 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@public/svgs/logo.svg';
 
 const Header = () => {
   return (
-    <header className={`px-5 py-4 bg-white mb-5 text-primary`}>
-      <div className='container-fluid'>
+    <header>
+      <div className='container'>
         <div className='row align-items-center'>
           <div className='col-6'>
-            <h4 className='m-0'>GLL</h4>
+            <Link href='/'>
+              <a className='logo'>
+                <Image src={logo} alt='logo' />
+              </a>
+            </Link>
           </div>
-          <div className='col-6'>
-            <div className='d-flex justify-content-end'>
-              <Link href='/' locale='en'>
-                English
-              </Link>
-              <span className='mx-2'>/</span>
-              <Link href='/' locale='ar'>
-                Arabic
-              </Link>
-            </div>
-          </div>
+          <div className='col-6'></div>
         </div>
       </div>
     </header>

@@ -1,11 +1,16 @@
 import axios, { AxiosResponse } from 'axios';
 import { setupInterceptorsTo } from './interseptors';
+import config from '@app/config';
+import { createApiUrl } from './url';
 
 /**
  * Creating axios instance with the
  * app settings
  */
-const fetcher = axios.create();
+const fetcher = axios.create({
+  baseURL: createApiUrl(config.fetcher.baseURL, config.fetcher.sufix),
+  headers: config.fetcher.headers,
+});
 
 /**
  * Setting up interceptors to app

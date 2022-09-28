@@ -1,5 +1,3 @@
-import { NextPageContext } from 'next';
-
 /**
  * Exporting constacts object for supported
  * browsers
