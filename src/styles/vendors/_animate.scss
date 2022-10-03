@@ -1,10 +1,18 @@
 @media (min-width: 1200px) {
+  .formDown{
+    transform: translateY(25px);
+    opacity: 0;
+    @include transitions(all, 0.5s, ease-in-out, 0s);
+  }
   .animate{
     filter: alpha(opacity=0);
     opacity: 0;
     &__animated{
       filter: alpha(opacity=100);
       opacity: 1;
+    }
+    &__formUp{
+      transform: translateY(0px);
     }
   }
 }

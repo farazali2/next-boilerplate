@@ -1,10 +1,10 @@
-import * as builder from 'yup';
+import { builder } from '@app/utils/validation/schema';
 
-//Schema fields
+//Validation rules
 const fields = {
   email: builder.string().required(),
   password: builder.string().required(),
 };
 
-//Creating yup schema
+//Creating valiation schema
 export const LoginSchema = builder.object().shape(fields);

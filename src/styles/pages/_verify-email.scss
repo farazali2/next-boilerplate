@@ -1,0 +1,34 @@
+.verify-help-box{
+  background: #F8F7F0;
+  padding: rem(70) rem(50) rem(60) rem(50);
+  h6 {
+    margin-bottom: rem(37);
+  }
+}
+
+.verify-help-links{
+  display: flex;
+  .btn-link-2 {
+    &:before{
+      background: $grey;
+    }
+  }
+}
+
+.verify-help-div {
+  &+.verify-help-div {
+    padding-left: rem(66);
+    position: relative;
+    &:before {
+      content: '';
+      background: #AEB2B5;
+      position: absolute;
+      left: rem(33);
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 85%;
+      width: 1px;
+    }
+  }
+}

@@ -1,14 +1,3 @@
-$h1-font-size: rem(140);
-$h2-font-size: rem(90);
-$h3-font-size: rem(70);
-$h4-font-size: rem(40);
-$h5-font-size: rem(20);
-$h6-font-size: rem(18);
-$lead-font-size: rem(24);
-$headings-margin-bottom: 0px;
-
-
-
 h1, .h1 {
   font-weight: 700;
   @include ForMarginPadding(margin, rem(0), rem(0), rem(30), rem(0));
@@ -20,13 +9,15 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-weight: 900;
+  font-weight: 500;
+  text-transform: uppercase;
   @include ForMarginPadding(margin, rem(0), rem(0), rem(30), rem(0));
 }
 
 h4, .h4 {
-  font-weight: 900;
+  font-weight: 700;
   @include ForMarginPadding(margin, rem(0), rem(0), rem(30), rem(0));
+  text-transform: uppercase;
 }
 
 h5, .h5 {
@@ -38,25 +29,39 @@ h6, .h6 {
   text-transform: uppercase;
   font-weight: 500;
   @include ForMarginPadding(margin, rem(0), rem(0), rem(30), rem(0));
-  letter-spacing: rem(2.88);
 }
 
 p {
   font-weight: 300;
   line-height: 1.7;
   font-size: rem(18);
+}
 
-  &.lead {
-    font-weight: 300;
-    @include ForMarginPadding(margin, rem(0), rem(0), rem(60), rem(0));
+
+.hr-line {
+  display: block;
+  width: rem(30);
+  height: 2px;
+  margin: 0 0 rem(30) 0;
+  border: none;
+  opacity: 1;
+
+  &.primary-line {
+    background: $primary;
   }
 
-  &.ftTxt {
-    font-size: rem(18);
+  &.secondary-line {
+    background: $secondary;
   }
 
-  &.ftSmallTxt {
-    font-size: rem(15);
-    @include ForMarginPadding(margin, rem(0), rem(0), rem(0), rem(0));
+  &.white-line {
+    background: $white;
+  }
+
+  &.grey-line {
+    background: #CACCD0;
+  }
+  &.line-row{
+    background: $borderColor;
   }
 }

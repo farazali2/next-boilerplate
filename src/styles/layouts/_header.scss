@@ -1,0 +1,51 @@
+header{
+  position: fixed;
+  background: $white;
+  @include ForMarginPadding(padding, rem(30), rem(0), rem(30), rem(0));
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  border-bottom: solid 1px $borderColor;
+}
+
+.logo{
+  display: block;
+  width: rem(201);
+  height: rem(71);
+}
+
+
+// Laptops large devices (desktops, 1600px and up)
+@media (min-width: 1600px) and (max-width: 1699.98px) { }
+
+// Laptops large devices (desktops, 1400px and up)
+@media (min-width: 1400px) and (max-width: 1599.98px) {}
+
+// Laptops small devices (desktops, 1200px and up)
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  header{
+    position: relative;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  header{
+    position: relative;
+  }
+}

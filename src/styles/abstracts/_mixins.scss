@@ -10,7 +10,7 @@
 }
 
 // Transitions Mixin
-//use: @include transitions(all 0.5s ease-in-out 0s);
+//use: @include transitions(all, 0.5s, ease-in-out, 0s);
 //output: transition: all 0.5s ease-in-out 0s;
 @mixin transitions($property: all, $duration: 0.5s, $timingFunction: ease-in, $delay: 0s) {
   -webkit-transition: $property $duration $timingFunction $delay;

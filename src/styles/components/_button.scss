@@ -2,17 +2,70 @@
   font-size: rem(16);
   position: relative;
   text-align: left;
-  font-weight: 300;
   text-transform: uppercase;
-  @include ForMarginPadding(padding, rem(15), rem(50), rem(16), rem(50));
+  letter-spacing: rem(2);
+  font-weight: bold;
+  @include ForMarginPadding(padding, rem(17), rem(59), rem(17), rem(59));
   @include transitions(all, 0.5s, ease-in-out, 0s);
   span {
     font-size: rem(16);
     position: relative;
     z-index: 3;
   }
+  &.btn-primary {
+    color: $white;
+  }
+  &.btn-white {
+    color: $primary;
+  }
 }
 
+.btn-link {
+  position: relative;
+  font-size: rem(17);
+  padding: 0;
+  color: $primary;
+  @include transitions(all, 0.5s, ease-in-out, 0s);
+  text-decoration: none;
+  &:before {
+    position: absolute;
+    @include leftToRight(auto);
+    @include RightToLeft(0);
+    bottom: rem(-5);
+    width: 0%;
+    height: 1px;
+    @include transitions(all, 0.5s, ease-in-out, 0s);
+    background: $primary;
+    content: '';
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+.btn-link-2 {
+  position: relative;
+  color: $primary;
+  @include transitions(all, 0.5s, ease-in-out, 0s);
+  text-decoration: none;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    @include transitions(all, 0.5s, ease-in-out, 0s);
+    background: $primary;
+    content: '';
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
 
 // Laptops large devices (desktops, 1600px and up)
 @media (min-width: 1600px) and (max-width: 1699.98px) { }
@@ -28,8 +81,33 @@
   .btn {
     &.btn-primary {
       &:hover {
-        color: $white;
+        color: $primary;
         background: transparent;
+      }
+    }
+    &.btn-white {
+      &:hover {
+        background: transparent;
+        border-color: $primary;
+        color: $white;
+      }
+    }
+  }
+  .btn-link {
+    &:hover {
+      &:before {
+        @include leftToRight(0);
+        @include RightToLeft(auto);
+        width: 100%;
+      }
+    }
+  }
+  .btn-link-2 {
+    &:hover {
+      &:before {
+        left: auto;
+        right: 0;
+        width: 0%;
       }
     }
   }

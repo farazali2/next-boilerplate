@@ -2,16 +2,25 @@
 @import "./global";
 // Fonts Family
 @import "./base/fonts";
-// Typography Heading and Paragraph
-@import "./base/typography";
+
 // Reset HTML and Body
 @import "./base/reset";
 // Vendors
 @import "./vendors/bootstrap";
 @import "./vendors/animate";
+@import "./vendors/icomoon";
+// Typography Heading and Paragraph
+@import "./base/typography";
 // Container
 @import "./layouts/container";
+@import "./layouts/header";
+@import "./layouts/footer";
 // Button Components
 @import "./components/button";
+@import "./components/field";
+@import "./components/checkbox";
+@import "./components/select";
 //Pages
 @import "./pages/home";
+@import "./pages/login";
+@import "./pages/verify-email";

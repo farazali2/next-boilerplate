@@ -27,17 +27,20 @@ $headings-font-family: $fontFamilyBase, sans-serif;
 
 /// Start Of Website Color Branding
 
-$primary: #13A19A;
-$secondary: #C82B64;
+$primary: #C82B64;
+$secondary: #13A19A;
+$lightGrey: #B9BCC1;
+$borderColor: #B9BCC1;
+$darkGrey: #636466;
+$grey: #231F20;
+$danger: #dc3545;
 $white: #ffffff;
 $black: #000000;
-$lightGrey: #666666;
-$borderColor: #373737;
 
 
 /// begin customization
 $body-bg: $black;
-$body-color: $white;
+$body-color: $grey;
 $theme-colors: ();
 /// stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
@@ -46,6 +49,9 @@ $theme-colors: map-merge(
                         "secondary": $secondary,
                         "borderColor": $borderColor,
                         "lightGrey": $lightGrey,
+                        "darkGrey": $darkGrey,
+                        "danger": $danger,
+                        "grey": $grey,
                         "white": $white,
                         "black": $black,
                 ),
@@ -53,19 +59,33 @@ $theme-colors: map-merge(
 );
 
 
-$btn-border-radius: 0px;
+$btn-border-radius: 30px;
+$input-border-radius: 5px;
 $btn-padding-y: 0;
 $btn-padding-x: 0;
 $btn-border-width: 1px;
 $btn-box-shadow: none;
+$input-bg: $white;
+$input-color : $black;
+
+$input-border-radius: 5px;
+$input-border-color: $borderColor;
+$input-border-width: 1px;
+
+
 
 $grid-gutter-width: 1.875rem;
 
 
-::-moz-selection {
-  background: rgba($primary, 0.23);
-}
 
-::selection {
-  background: rgba($primary, 0.23);
-}
+
+$h1-font-size: rem(90);
+$h2-font-size: rem(60); //done
+$h3-font-size: rem(28);
+$h4-font-size: rem(24); // done
+$h5-font-size: rem(20); // done
+$h6-font-size: rem(20); //done
+$lead-font-size: rem(36);
+$headings-margin-bottom: 0px;
+
+$headings-color: $grey;

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { UniversityEntity } from '@app/types/entities/university.entity';
 import { getUniversities } from '@app/store/actions/universities.actions';
 
@@ -31,7 +31,7 @@ export const UniversitiesSlice = createSlice({
      * @param state
      * @param action
      */
-    setList: (state, action) => {
+    setList: (state, action: PayloadAction<Array<UniversityEntity>>) => {
       state.list = action.payload;
     },
 
@@ -41,7 +41,7 @@ export const UniversitiesSlice = createSlice({
      * @param state
      * @param action
      */
-    setLoading: (state, action) => {
+    setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
   },
