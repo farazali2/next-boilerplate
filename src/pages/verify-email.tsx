@@ -27,7 +27,7 @@ const VerifyEmail: NextPage = () => {
                 <div className='verify-help-links'>
                   <div className='verify-help-div resend-help-div'>
                     <p className='mb-0 fw-700 text-grey'>
-                      Didn’t receive the email?
+                      Didn,t receive the email?
                       <br />
                       <Link href='/login'>
                         <a
@@ -45,12 +45,10 @@ const VerifyEmail: NextPage = () => {
                   </div>
                   <div className='verify-help-div'>
                     <p className='mb-0 fw-700 text-grey'>
-                      Don’t have access to your email?
+                      Don,t have access to your email?
                       <br />
                       <Link href='/register'>
-                        <a
-                          className='btn-link-2 fw-400 text-grey'
-                        >
+                        <a className='btn-link-2 fw-400 text-grey'>
                           Change your contact email address
                         </a>
                       </Link>

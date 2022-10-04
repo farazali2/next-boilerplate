@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import LeftFixedImage from '@app/components/leftfixedimage';
-import Link from "next/link";
+import Link from 'next/link';
 const CreatedPassword: NextPage = () => {
   return (
     <>

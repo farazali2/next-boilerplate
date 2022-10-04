@@ -1,6 +1,8 @@
 import { FC } from 'react';
 
-export interface ISpinner {}
+export interface ISpinner {
+  className?: string;
+}
 
 const Spinner: FC<ISpinner> = () => {
   return (
